@@ -15,7 +15,7 @@ const DataSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+DataSchema.index({ category: 1, value: -1 });
 const Data = mongoose.model('Data', DataSchema);
 
 export default Data;
