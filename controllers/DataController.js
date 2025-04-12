@@ -25,7 +25,9 @@ const DataController = {
                     $group: {
                         _id: '$category',
                         total: { $sum: 1 },
-                        averageValue: { $avg: '$value' }
+                        averageValue: { $avg: '$value' },
+                        minValue:{$min:'$value'},
+                        maxValue:{$max:'$value'}
                     }
                 },
                 {
