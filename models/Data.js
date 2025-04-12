@@ -17,5 +17,9 @@ const DataSchema = new mongoose.Schema(
 );
 DataSchema.index({ category: 1, value: -1 });
 const Data = mongoose.model('Data', DataSchema);
-
+Data.init().then(() => {
+  console.log('Data model initialized and index created');
+}).catch((error) => { 
+  console.error('Error initializing Data model:', error);
+});
 export default Data;
